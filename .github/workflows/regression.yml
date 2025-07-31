@@ -134,7 +134,7 @@ jobs:
         run: |
 
           # Prepend self-hosted
-          input="self-hosted, ${input}"
+          input="self-hosted, aws-ec2-runners, ${input}"
 
           # Remove all whitespace
           input="$(echo ${input} | tr -d [:space:])"
