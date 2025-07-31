@@ -62,7 +62,7 @@ jobs:
           fi
 
   collect_statistics:
-    runs-on: [self-hosted, altinity-on-demand, altinity-style-checker-aarch64]
+    runs-on: [self-hosted, aws-ec2-runners, altinity-on-demand, altinity-style-checker-aarch64]
     needs: [config_workflow]
     name: "Collect Statistics"
     outputs:

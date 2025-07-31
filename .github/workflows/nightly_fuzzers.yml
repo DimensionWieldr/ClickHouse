@@ -146,7 +146,7 @@ jobs:
           fi
 
   build_fuzzers:
-    runs-on: [self-hosted, altinity-on-demand, altinity-builder]
+    runs-on: [self-hosted, aws-ec2-runners, altinity-on-demand, altinity-builder]
     needs: [config_workflow, dockers_build_amd, dockers_build_arm]
     if: ${{ !failure() && !cancelled() && !contains(fromJson(needs.config_workflow.outputs.data).cache_success_base64, 'QnVpbGQgKGZ1enplcnMp') }}
     name: "Build (fuzzers)"
@@ -187,7 +187,7 @@ jobs:
           fi
 
   libfuzzer_tests:
-    runs-on: [self-hosted, altinity-on-demand, altinity-func-tester-aarch64]
+    runs-on: [self-hosted, aws-ec2-runners, altinity-on-demand, altinity-func-tester-aarch64]
     needs: [config_workflow, dockers_build_amd, dockers_build_arm, build_fuzzers]
     if: ${{ !failure() && !cancelled() && !contains(fromJson(needs.config_workflow.outputs.data).cache_success_base64, 'bGliRnV6emVyIHRlc3Rz') }}
     name: "libFuzzer tests"
