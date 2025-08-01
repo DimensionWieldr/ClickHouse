@@ -19,37 +19,31 @@ class RunnerLabels:
     BUILDER_AMD = [
         "self-hosted",
         "aws-ec2-runners",
-        "altinity-on-demand",
         "altinity-builder",
     ]
     BUILDER_ARM = [
         "self-hosted",
         "aws-ec2-runners",
-        "altinity-on-demand",
         "altinity-builder",
     ]
     FUNC_TESTER_AMD = [
         "self-hosted",
         "aws-ec2-runners",
-        "altinity-on-demand",
         "altinity-func-tester",
     ]
     FUNC_TESTER_ARM = [
         "self-hosted",
         "aws-ec2-runners",
-        "altinity-on-demand",
         "altinity-func-tester-aarch64",
     ]
     STYLE_CHECK_AMD = [
         "self-hosted",
         "aws-ec2-runners",
-        "altinity-on-demand",
         "altinity-style-checker",
     ]
     STYLE_CHECK_ARM = [
         "self-hosted",
         "aws-ec2-runners",
-        "altinity-on-demand",
         "altinity-style-checker-aarch64",
     ]
 

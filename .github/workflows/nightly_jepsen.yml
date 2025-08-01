@@ -146,7 +146,7 @@ jobs:
           fi
 
   build_amd_binary:
-    runs-on: [self-hosted, aws-ec2-runners, altinity-on-demand, altinity-builder]
+    runs-on: [self-hosted, aws-ec2-runners, altinity-builder]
     needs: [config_workflow, dockers_build_amd, dockers_build_arm]
     if: ${{ !failure() && !cancelled() && !contains(fromJson(needs.config_workflow.outputs.data).cache_success_base64, 'QnVpbGQgKGFtZF9iaW5hcnkp') }}
     name: "Build (amd_binary)"
@@ -187,7 +187,7 @@ jobs:
           fi
 
   clickhouse_keeper_jepsen:
-    runs-on: [self-hosted, aws-ec2-runners, altinity-on-demand, altinity-style-checker-aarch64]
+    runs-on: [self-hosted, aws-ec2-runners, altinity-style-checker-aarch64]
     needs: [config_workflow, dockers_build_amd, dockers_build_arm, build_amd_binary]
     if: ${{ !failure() && !cancelled() && !contains(fromJson(needs.config_workflow.outputs.data).cache_success_base64, 'Q2xpY2tIb3VzZSBLZWVwZXIgSmVwc2Vu') }}
     name: "ClickHouse Keeper Jepsen"
