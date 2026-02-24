@@ -31,6 +31,7 @@
 #include <Functions/indexHint.h>
 
 #include <Interpreters/ExpressionActionsSettings.h>
+#include <Interpreters/ClientInfo.h>
 #include <Interpreters/Context.h>
 #include <Interpreters/Set.h>
 
