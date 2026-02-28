@@ -844,6 +844,7 @@ class ReplaseAliasColumnsVisitor : public InDepthQueryTreeVisitor<ReplaseAliasCo
             alias_marker_node->getArguments().getNodes()[0]->removeAlias();
             alias_marker_node->setAlias(original_expression_alias);
         }
+        resolveOrdinaryFunctionNodeByName(*alias_marker_node, "__aliasMarker", context);
 
         return alias_marker_node;
     }

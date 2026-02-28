@@ -131,7 +131,7 @@ public:
 
     String getName() const override { return name; }
     size_t getNumberOfArguments() const override { return 2; }
-    ColumnNumbers getArgumentsThatAreAlwaysConstant() const override { return {1}; }
+    ColumnNumbers getArgumentsThatAreAlwaysConstant() const override { return {}; }
     bool isSuitableForConstantFolding() const override { return false; }
     bool isSuitableForShortCircuitArgumentsExecution(const DataTypesWithConstInfo & /*arguments*/) const override { return false; }
 
@@ -139,9 +139,6 @@ public:
     {
         if (arguments.size() != 2)
             throw Exception(ErrorCodes::BAD_ARGUMENTS, "Function __aliasMarker expects 2 arguments");
-
-        if (!WhichDataType(arguments[1]).isString())
-            throw Exception(ErrorCodes::BAD_ARGUMENTS, "Function __aliasMarker is internal and should not be used directly");
 
         return arguments.front();
     }
